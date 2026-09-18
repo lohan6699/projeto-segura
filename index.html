@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Monitor // Segurança Escolar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="scanlines"></div>
+
+<!-- ============ CAPA / SLIDE DE ABERTURA ============ -->
+<div id="cover-screen">
+  <div class="cover-content">
+    <div class="proto-badge mono">PROTÓTIPO — PROPOSTA DE CONCEITO</div>
+    <h1 class="cover-title">Mais segurança para a escola,<br>com um painel simples de câmeras.</h1>
+    <p class="cover-subtitle">
+      Uma ideia de sistema para acompanhar todas as câmeras da escola em um só
+      lugar, com alertas automáticos de movimento e o status de cada área
+      monitorada em tempo real.
+    </p>
+
+    <div class="cover-points">
+      <div class="cover-point">
+        <div class="cover-point-num mono">01</div>
+        <div>
+          <div class="cover-point-title">Visão geral em um só painel</div>
+          <div class="cover-point-desc">Todas as câmeras da escola organizadas em uma única tela, com o status de cada uma (online, offline ou em alerta).</div>
+        </div>
+      </div>
+      <div class="cover-point">
+        <div class="cover-point-num mono">02</div>
+        <div>
+          <div class="cover-point-title">Alertas em tempo real</div>
+          <div class="cover-point-desc">Movimentações e ocorrências aparecem automaticamente em um painel de atividade, sem precisar ficar checando câmera por câmera.</div>
+        </div>
+      </div>
+      <div class="cover-point">
+        <div class="cover-point-num mono">03</div>
+        <div>
+          <div class="cover-point-title">Acesso restrito</div>
+          <div class="cover-point-desc">Só entra quem tem login autorizado — pensado para a coordenação, direção e equipe de segurança.</div>
+        </div>
+      </div>
+    </div>
+
+    <button class="cover-btn" id="cover-btn">Ver demonstração do painel</button>
+    <div class="cover-note mono">Próxima etapa: implementar com apoio da equipe de TI da escola.</div>
+  </div>
+</div>
+
+<!-- ============ LOGIN ============ -->
+<div id="login-screen">
+  <div class="login-card">
+    <div class="login-eyebrow mono">MONITORAMENTO // ACESSO RESTRITO</div>
+    <h1 class="login-title">Painel de Segurança Escolar</h1>
+    <p class="login-desc">Ideia de painel para acompanhar as câmeras da escola em tempo real, com alertas automáticos de movimento e status de cada área monitorada.</p>
+    <form id="login-form">
+      <div class="field">
+        <label for="usuario">Usuário</label>
+        <input type="text" id="usuario" autocomplete="username" placeholder="ex: diretoria" value="diretoria">
+      </div>
+      <div class="field">
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" autocomplete="current-password" placeholder="qualquer valor" value="demo123">
+      </div>
+      <button type="submit" class="login-btn">Ver demonstração</button>
+      <div class="login-error mono" id="login-error">Preencha usuário e senha para continuar.</div>
+    </form>
+    <div class="login-note mono">
+      Esta tela é ilustrativa, apenas para apresentar a ideia. Em uma versão
+      real, o acesso seria validado por um servidor da escola, não pelo navegador.
+    </div>
+  </div>
+</div>
+
+<!-- ============ DASHBOARD ============ -->
+<div id="dashboard">
+  <div class="topbar">
+    <div class="brand">
+      <div class="brand-dot"></div>
+      <div class="brand-name">Monitor de Segurança — Escola</div>
+      <span class="topbar-proto mono">PROTÓTIPO</span>
+    </div>
+    <div class="topbar-right">
+      <span id="cam-count" class="mono">0 câmeras online</span>
+      <span class="clock mono" id="clock">--:--:--</span>
+      <button class="logout-btn" id="logout-btn">Sair</button>
+    </div>
+  </div>
+
+  <div class="main-layout">
+    <div class="sidebar">
+      <div class="sidebar-title mono">CÂMERAS</div>
+      <div id="cam-list"></div>
+    </div>
+
+    <div class="grid-wrap">
+      <div class="cam-grid" id="cam-grid"></div>
+    </div>
+
+    <div class="alerts-panel">
+      <div class="alerts-title mono">ATIVIDADE RECENTE</div>
+      <div class="alerts-list" id="alerts-list"></div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
